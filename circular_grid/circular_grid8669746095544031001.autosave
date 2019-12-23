@@ -1,0 +1,24 @@
+int ite=36;
+
+float posit(float pos){
+  int zoom=width/2;
+  int trans=zoom;
+  return trans+zoom*pos;
+}
+
+float circx(int i){
+  return cos(2*PI*i/ite);
+}
+
+float circy(int i){
+  return sin(2*PI*i/ite);
+}
+
+void setup(){
+  size(700,700);
+    for (int i=0;i<ite;i++){
+    for(int j=0;j<ite;j++){
+      line(posit(circx(i)),posit(circy(i)),posit(circx(j)),posit(circy(j)));
+    }
+  }
+}

@@ -1,4 +1,4 @@
-size(800, 800)
+size(600, 550)
 noStroke()
 
 
@@ -34,13 +34,18 @@ white = "#FFFFFF"
 #heart(95, 100, 5, white)
 #heart(115, 100, 5, white)
 
-heart(128, 128, 128, red)
-heart(128-64, 128, 64, white)
-heart(128+128+64, 128, 64, white)
+#heart(128, 128, 128, red)
+#heart(128-64, 128, 64, white)
+#heart(128+128+64, 128, 64, white)
 
-#def recursive_heart(x, y, radius, color):
-#    heart(x, y, radius, color)
-#    if color == red:
-#        recursive_heart(x-radius/2, y, radius/2, white)
-#    else:
-#        a = 1
+def recursive_heart(x, y, radius, color, depth):
+    heart(x, y, radius, color)
+    if color == red:
+        color = white
+    else:
+        color = red
+    if depth > 0:
+        recursive_heart(x-radius/2, y, radius/2, color, depth-1)
+        recursive_heart(x+(3*radius)/2, y, radius/2, color, depth-1)
+ 
+recursive_heart(128, 128, 128, red, 6)

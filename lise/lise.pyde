@@ -18,8 +18,13 @@ def wrap_rect(x, y , a, b):
 
 def wrap_line(x, y, a, b):
     line(x*coef+offset, y*coef+offset, a*coef+offset, b*coef+offset)
-                                                
-triangle(100, 100, 200, 200, 100, 200, "#33FF66")
+
+background("#00FF00")
+
+light_green = "#33FF66"
+light_pink = "#FFCCFF"                                                
+triangle(100, 100, 200, 200, 100, 200, light_pink)
+
 triangle(100, 100, 120, 120, 100, 120, "#FF00FF")
 triangle(180, 180, 200, 200, 180, 200, "#FFFF33")
 triangle(100, 180, 100, 200, 120, 200, "#6633CC")
